@@ -2,30 +2,30 @@
 using namespace std;
 
 int main () {
-    double num1, num2, ans;
-    char dau;
-    cout << "Please enter two numbers and add +-*/";
-    cin >> num1 >> dau >> num2;
-    switch (dau) {
-        case '+':
-        ans = num1 + num2;
-        cout << ans << endl;
-        break;
-        case '-':
-        ans = num1 - num2;
-        cout << ans << endl;
-        break;
-        case '*':
-        ans = num1 * num2;
-        cout << ans << endl;
-        break;
-        case '/':
-        ans = num1 / num2;
-        cout << ans << endl;
-        break;
-        default:
-            cout << "Please enter a number and add /";
+    cout << "this is a temperature conversion program\n";
+    double temperature;
+    char unit;
+    cout << "choose a temperature unit ( F or C ):\n";
+    cin >> unit;
+    switch (unit) {
+        case 'f':
+        case 'F': {
+            cout << "enter the temperature in celsius:" << endl;
+            cin >> temperature;
+            temperature = (temperature * 1.8) +32.0;
+            cout << "temperature is: " << temperature << endl;
             break;
+    }
+        case 'c':
+            case 'C': {
+            cout << "enter the temperature in Fahrenheit: " << endl;
+            cin >> temperature;
+            temperature = (temperature - 32) * 5 / 9;
+            cout << "temperature is: " << temperature << endl;
+            break;
+        }
+    default:
+    cout << "enter only in F or C:" << endl;
 }
-            return 0;
+    return 0;
     }
